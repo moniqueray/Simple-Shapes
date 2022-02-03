@@ -13,11 +13,14 @@ var ellipseDist = 40;
 
 // Setup code goes here
 function setup() {
+  //windowWidth means it goes out to the whole window as you change
+  //the window size
   createCanvas(windowWidth, windowHeight);
   console.log("Starting up Simple Shapes");
   rectMode(CENTER);
   ellipseMode(CENTER);
 
+  //console window 
   console.log("Width = " + width);
   console.log("Height = " + height);
 
