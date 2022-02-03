@@ -15,6 +15,8 @@ var ellipseDist = 40;
 function setup() {
   //windowWidth means it goes out to the whole window as you change
   //the window size
+
+  //CREATE SPECFIC SIZE LATER
   createCanvas(windowWidth, windowHeight);
   console.log("Starting up Simple Shapes");
   rectMode(CENTER);
@@ -28,40 +30,46 @@ function setup() {
   ellipseXPos = width/2 - 250;
  }
 
-// Draw code goes here
+// DRAW CODE HERE!!
 function draw() {
-  background(34,50,204);
+  background('#fae');
+  
 
-  drawCircle();
-  drawEllipses();
+  //drawEllipses();
   drawRects();
+  drawCircle();
 }
 
-function drawCircle() {
-  fill(0,102,255);
-  circle(width/2,height/2,20);
-}
 
-function drawEllipses() {
-  // Ellipse #1
-  fill(0,255,0);
-  ellipse(ellipseXPos,ellipseYPos,200,80);
+// //function drawEllipses() {
+//   // Ellipse #1
+//   fill(0,255,0);
+//   ellipse(ellipseXPos,ellipseYPos,200,80);
 
-  // Ellipse #2
-  fill(0,255,0);
-  ellipse(ellipseXPos,ellipseYPos+ellipseDist,200,80);
-}
+//   // Ellipse #2
+//   fill(0,255,0);
+//   ellipse(ellipseXPos,ellipseYPos+ellipseDist,200,80);
+// }
 
 function drawRects() {
  // Center Rectangle
-  fill(255,0,0);
-  stroke(220);
-  strokeWeight(3);
-  rect( width/2,height/2,200,100);
+  fill(240);
+  stroke(51);
+  strokeWeight(9);
+  rect(width/2,height/2,500,600);
 
   // Tall Rect
-  fill(126,50,20);
-  stroke(27);
-  strokeWeight(2);
-  rect( 100,height/2,40,400);
+  //fill(126,50,20);
+ // stroke(27);
+  //strokeWeight(2);
+  //rect( 100,height/2,40,400);
  }
+
+ 
+ function drawCircle() {
+  let c = color(255, 204, 153);
+  fill(c);
+  //fill('rgb(255, 204, 153');
+  circle(width/2,height/2,400);
+  stokeweight(200);
+}
