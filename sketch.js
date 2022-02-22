@@ -61,6 +61,11 @@ function drawJacket() {
 }
 
 function drawNeck() {
+  //background hair BEHIND neck
+  fill(61, 33, 4);
+  strokeWeight(0);
+  ellipse(190,257,350,300);
+  //neck
   fill(217, 202, 143);
   stroke(0);
   strokeWeight(0);
@@ -81,17 +86,34 @@ function drawHead() {
 function drawLowlights(){
   fill(61, 33, 4);
   strokeWeight(0);
-  ellipse(320,200,100,360);
-  ellipse(50,200,50,360);
-
+  //upper center
+  ellipse(157,30,230,90);
+  //left side
+  ellipse(50,200,55,360);
+  ellipse(68,70,50,150);
+  ellipse(90,60,70,60);
+  //right side
+  ellipse(310,70,80,90);
+  ellipse(250,55,115,70);
+  ellipse(320,200,100,387);
+  ellipse(273,18,118,58);
 }
 
 function drawHighlights() {
+  //Blonde hair highlights
   fill(230, 226, 25);
   strokeWeight(0);
-  ellipse(170,20,128,40);
+  ellipse(280,150,0.5,50);
   strokeWeight(0);
-  ellipse(60,200,10,90)
+  ellipse(60,200,0.5,90);
+  ellipse(85,300,0.5,90);
+  ellipse(290,300,0.5,90);
+  ellipse(320,200,0.5,120);
+  ellipse(340,80,0.5,60);
+  ellipse(300,20,50,0.5);
+  ellipse(290,90,0.5,30);
+  ellipse(65,70,0.5,70);
+  ellipse(40,100,0.5,70);
 }
 
 function drawFace() {
