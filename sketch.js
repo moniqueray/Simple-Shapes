@@ -1,75 +1,153 @@
-/***********************************************************************************
-  SimpleShapes
-  by Scott Kildall
+//Self-Portrait Project 
+//Monique Ray
 
-  Sketch for drawing some very simple shapes
+//Debug
+var gDebugMode = false;
 
-***********************************************************************************/
-
-// Global Variables
-var ellipseXPos = 0;
-var ellipseYPos = 300;
-var ellipseDist = 40;
-
-// Setup code goes here
+//my setup foundation
 function setup() {
-  //windowWidth means it goes out to the whole window as you change
-  //the window size
-
-  //CREATE SPECFIC SIZE LATER
-  createCanvas(windowWidth, windowHeight);
-  console.log("Starting up Simple Shapes");
-  rectMode(CENTER);
-  ellipseMode(CENTER);
-
-  //console window 
-  console.log("Width = " + width);
-  console.log("Height = " + height);
-
-  // set ellipse X pos
-  ellipseXPos = width/2 - 250;
+  createCanvas(400, 400);
  }
 
-// DRAW CODE HERE!!
 function draw() {
   background('#fae');
-  
+  fill(0,50,0);
+  stroke(0);
+  strokeWeight(1);
 
-  //drawEllipses();
-  drawRects();
-  drawCircle();
+  //motorcycle jacket
+  drawJacket();
+
+  //neck
+  drawNeck();
+
+  //head / bone structure
+  drawHead();
+
+  //hair lowlights
+  drawLowlights();
+
+  //hair highlights
+  drawHighlights();
+
+  //face (facial features - eyes, nose, lips, cheeks)
+  drawFace();
+
+  if(gDebugMode) {
+    displayMouseCoordinates();
+  }
+}
+
+function drawJacket() {
+  fill('#333333');
+  stroke(0);
+  strokeWeight(0);
+  beginShape();
+  vertex (400,400);
+  vertex(400,295);
+  vertex(258,260);
+  vertex(270,400)
+  endShape(CLOSE);
+
+  fill('#333333');
+  stroke(0);
+  strokeWeight(0);
+  beginShape();
+  vertex(0,400);
+  vertex(0,300);
+  vertex(130,270);
+  vertex(150,400);
+  endShape(CLOSE);
+}
+
+function drawNeck() {
+  fill(217, 202, 143);
+  stroke(0);
+  strokeWeight(0);
+  beginShape();
+  vertex(130,400);
+  vertex(125,215);
+  vertex(253,212);
+  vertex(270,400);
+  endShape(CLOSE);
+}
+
+function drawHead() {
+  fill(217, 202, 143);
+  strokeWeight(1);
+  ellipse(175,140,220, 280);
+}
+
+function drawLowlights(){
+  fill(61, 33, 4);
+  strokeWeight(0);
+  ellipse(320,200,100,360);
+  ellipse(50,200,50,360);
+
+}
+
+function drawHighlights() {
+  fill(230, 226, 25);
+  strokeWeight(0);
+  ellipse(170,20,128,40);
+  strokeWeight(0);
+  ellipse(60,200,10,90)
+}
+
+function drawFace() {
+  //Eyes
+  fill(24,94,44);
+  ellipse(130,120,50,40);
+  ellipse(200,120,50,40);
+
+  fill(51, 49, 39);
+  circle(130,120,28);
+  circle(200,120,28);
+
+  fill(252, 252, 252);
+  circle(135,110,10);
+  circle(205,110,10);
+
+  //Eyebrows
+  stroke(3);
+  strokeWeight(1);
+  line(110,89,150,85);
+  line(180,85,215,89);
+  
+  //Nose
+  noFill();
+  arc(160,171,40,25,200,90);
+  
+  //mouth
+  fill(204, 31, 126);
+  //arc(180,225,50,50,100,280);
+  fill(204, 35, 128);
+  ellipse(170,225,60,17);
+  line(140,225,200,225);
+  
+  //cheeks
+  fill(227, 175, 203);
+  stroke(0);
+  strokeWeight(0);
+  ellipse(100,164,47,35);
+  ellipse(235,164,47,34);
+  
 }
 
 
-// //function drawEllipses() {
-//   // Ellipse #1
-//   fill(0,255,0);
-//   ellipse(ellipseXPos,ellipseYPos,200,80);
 
-//   // Ellipse #2
-//   fill(0,255,0);
-//   ellipse(ellipseXPos,ellipseYPos+ellipseDist,200,80);
+
+// function displayMouseCoordinates() {
+//   fill(0);
+//   textSize(24);
+//   strokeWeight(1);
+//   textAlign(LEFT);
+//   text("X: " + mouseX) + " Y: " + mouseY, 20, height -20);
 // }
 
-function drawRects() {
- // Center Rectangle
-  fill(240);
-  stroke(51);
-  strokeWeight(9);
-  rect(width/2,height/2,500,600);
 
-  // Tall Rect
-  //fill(126,50,20);
- // stroke(27);
-  //strokeWeight(2);
-  //rect( 100,height/2,40,400);
- }
-
- 
- function drawCircle() {
-  let c = color(255, 204, 153);
-  fill(c);
-  //fill('rgb(255, 204, 153');
-  circle(width/2,height/2,400);
-  stokeweight(200);
-}
+// function keyTyped() {
+//   if (key == ' ') {
+//     gDebugMode = !gDebugMode;
+//   }
+// }
